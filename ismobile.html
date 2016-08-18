@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    isMobile_fuction = {
+        android: function() {
+            return navigator.userAgent.match(/Android/i) ? 1: 0;
+        },
+        blackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i) ? 1: 0;
+        },
+        ios: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? 1: 0;
+        },
+        windows: function() {
+            return navigator.userAgent.match(/IEMobile/i) ? 1: 0;
+        },
+        any: function() {
+            return (isMobile_fuction.android() || isMobile_fuction.blackBerry() || isMobile_fuction.ios() || isMobile_fuction.windows());
+        }
+    };
+</script>
+<script type="text/javascript">
+    var mobileBashPath = "http://topic.htche.com/promotion/20160513/wap/";
+    //如果是手机端，跳转至手机端首页
+    var isMobile = isMobile_fuction.any();
+    if (isMobile || isMobile == "1") {
+            window.location.href = mobileBashPath;
+    }
+</script>
+<body>
+
+</body>
+</html>
